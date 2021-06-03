@@ -9,12 +9,8 @@ FetchContent_MakeAvailable(googletest)
 
 enable_testing()
 
-add_library(Chapter1Lib)
-target_include_directories(Chapter1Lib ../Chapter1)
-
-add_executable(Chapter1 Chapter1.cpp)
+add_executable(Chapter1 Chapter1.cpp ../Chapter1/Dollar.h)
 target_link_libraries(Chapter1 gtest_main)
-target_link_libraries(Chapter1 Chapter1Lib)
 
 include(GoogleTest)
 gtest_discover_tests(Chapter1)

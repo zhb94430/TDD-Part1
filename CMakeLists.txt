@@ -5,4 +5,3 @@ project(TDD-Part1)
 set(CMAKE_CXX_STANDARD 11)
 
 add_subdirectory(./Tests)
-# add_subdirectory(./Chapter1)

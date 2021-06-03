@@ -2,9 +2,9 @@
 
 class Dollar
 {
+public:
 	int amount;
 
-	Dollar(int amount);
-
-	void times(int multiplier);	
+	Dollar(int _amount) {amount = _amount;};
+	void times(int multiplier) {amount *= multiplier;};	
 };
