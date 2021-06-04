@@ -2,9 +2,6 @@
 
 #include <string>
 
-class Dollar;
-class Franc;
-
 class Money
 {
 protected:
@@ -26,6 +23,7 @@ public:
 	};
 	virtual Money& operator*(const int multiplier) const 
 	{ return *(new Money(amount * multiplier, currency)); };
+
 
 	std::string getCurrency()
 	{
