@@ -9,29 +9,32 @@ FetchContent_MakeAvailable(googletest)
 
 enable_testing()
 
-add_executable(Chapter1 Chapter1.cpp ../Chapter1/Dollar.h)
+add_executable(Chapter1 Chapter1.cpp)
 target_link_libraries(Chapter1 gtest_main)
 
-add_executable(Chapter2 Chapter2.cpp ../Chapter2/Dollar.h)
+add_executable(Chapter2 Chapter2.cpp)
 target_link_libraries(Chapter2 gtest_main)
 
-add_executable(Chapter3 Chapter3.cpp ../Chapter3/Dollar.h)
+add_executable(Chapter3 Chapter3.cpp)
 target_link_libraries(Chapter3 gtest_main)
 
-add_executable(Chapter4 Chapter4.cpp ../Chapter4/Dollar.h)
+add_executable(Chapter4 Chapter4.cpp)
 target_link_libraries(Chapter4 gtest_main)
 
-add_executable(Chapter5 Chapter5.cpp ../Chapter5/Dollar.h ../Chapter5/Franc.h)
+add_executable(Chapter5 Chapter5.cpp)
 target_link_libraries(Chapter5 gtest_main)
 
-add_executable(Chapter6 Chapter6.cpp ../Chapter6/Dollar.h ../Chapter6/Franc.h ../Chapter6/Money.h)
+add_executable(Chapter6 Chapter6.cpp)
 target_link_libraries(Chapter6 gtest_main)
 
-add_executable(Chapter7 Chapter7.cpp ../Chapter7/Dollar.h ../Chapter7/Franc.h ../Chapter7/Money.h)
+add_executable(Chapter7 Chapter7.cpp)
 target_link_libraries(Chapter7 gtest_main)
 
-add_executable(Chapter8 Chapter8.cpp ../Chapter8/Dollar.h ../Chapter8/Franc.h ../Chapter8/Money.h)
+add_executable(Chapter8 Chapter8.cpp)
 target_link_libraries(Chapter8 gtest_main)
+
+add_executable(Chapter9 Chapter9.cpp ../Chapter9/MoneyFactory.cpp)
+target_link_libraries(Chapter9 gtest_main)
 
 include(GoogleTest)
 gtest_discover_tests(Chapter1)
@@ -42,3 +45,4 @@ gtest_discover_tests(Chapter5)
 gtest_discover_tests(Chapter6)
 gtest_discover_tests(Chapter7)
 gtest_discover_tests(Chapter8)
+gtest_discover_tests(Chapter9)
