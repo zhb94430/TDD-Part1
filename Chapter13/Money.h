@@ -10,28 +10,15 @@ public:
 	int amount;
 	std::string currency; // Added since C++ does not have a getClass() equivalent
 
-
 	Money() {};
-	Money(int _amount, std::string _currency)
-	{
-		amount = _amount;
-		currency = _currency;
-	}
+	Money(int _amount, std::string _currency);
 
-
-	bool operator==(const Money& other) const 
-	{ 
-		return amount == other.amount &&
-			   currency == other.currency; 
-	};
+	bool operator==(const Money& other) const;
 	
-	Money& times(int multiplier) 
-	{ return *(new Money(amount * multiplier, currency)); };
-
-	Expression& plus(Money addend);
-
-	std::string getCurrency()
+	Money* times(int multiplier);
+	Expression* plus(Money* addend);
+	Money* reduce(std::string to)
 	{
-		return currency;
-	}
+		return this;
+	};
 };

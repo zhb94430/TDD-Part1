@@ -1,7 +1,24 @@
 #include "Money.h"
 #include "Sum.h"
 
-Expression& Money::plus(Money addend)
+Money::Money(int _amount, std::string _currency)
 {
-	return *(new Sum(*this, addend));
+	amount = _amount;
+	currency = _currency;
+}
+
+bool Money::operator==(const Money& other) const 
+{ 
+	return amount == other.amount &&
+		   currency == other.currency; 
+}
+
+Money* Money::times(int multiplier)
+{ 
+	return new Money(amount * multiplier, currency); 
+}
+
+Expression* Money::plus(Money* addend)
+{
+	return new Sum(this, addend);
 }

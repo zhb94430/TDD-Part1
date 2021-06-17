@@ -6,12 +6,8 @@
 class Bank
 {
 public:
-	Money& reduce(Expression& source, std::string to)
+	Money* reduce(Expression* source, std::string to)
 	{
-		Sum& sum = dynamic_cast<Sum&>(source);
-
-		int amount = sum.augend.amount + sum.addend.amount;
-
-		return *(new Money(amount, to));
+		return source->reduce(to);
 	}
 };
